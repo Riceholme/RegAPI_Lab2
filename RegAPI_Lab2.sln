@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32602.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegAPI_Lab2", "RegAPI_Lab2\RegAPI_Lab2.csproj", "{4E46F44B-55F4-4048-80AA-A1DBD338656A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E46F44B-55F4-4048-80AA-A1DBD338656A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E46F44B-55F4-4048-80AA-A1DBD338656A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E46F44B-55F4-4048-80AA-A1DBD338656A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E46F44B-55F4-4048-80AA-A1DBD338656A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {972B8097-ED7A-4443-82DB-A47896CF3ADC}
+	EndGlobalSection
+EndGlobal
