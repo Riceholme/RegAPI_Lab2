@@ -1,16 +1,24 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using RegAPI_Lab2.Models;
 
 namespace RegAPI_Lab2.Controllers
 {
-    public class EmpController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class EmployeeController : ControllerBase
     {
-        private readonly EmpRepository _empRepo;
+        private readonly IEmpRepository _empRepo;
 
-        public EmpController(EmpRepository empRepo)
+        public EmployeeController(IEmpRepository empRepo)
         {
             _empRepo = empRepo;
         }
+        //private readonly EmpRepository _empRepo;
+        //public EmployeeController(EmpRepository empRepo)
+        //{
+        //    _empRepo = empRepo;
+        //}
 
         [HttpGet]
         public IActionResult GetAllEmployees()
@@ -23,7 +31,7 @@ namespace RegAPI_Lab2.Controllers
             return NotFound("No employees was found");
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public IActionResult GetEmployeeById(int id)
         {
             var employee = _empRepo.GetById(id);
@@ -56,7 +64,7 @@ namespace RegAPI_Lab2.Controllers
             return NotFound("Employee not found to update");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteEmployee(int id)
         {
             var empToDelete = _empRepo.GetById(id);
@@ -67,9 +75,5 @@ namespace RegAPI_Lab2.Controllers
             }
             return NotFound($"Employee with {id} could not be deleted");
         }
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
     }
 }

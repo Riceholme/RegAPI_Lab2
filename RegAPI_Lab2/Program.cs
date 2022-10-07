@@ -13,12 +13,21 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(
 builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddCors((setup) => setup.AddPolicy(
-    "default", (options => options
-.AllowAnyMethod()
-.AllowAnyHeader()
-.AllowAnyOrigin()
-)));
+builder.Services.AddScoped<IEmpRepository, EmpRepository>();
+
+//builder.Services.AddCors((setup) => setup.AddPolicy(
+//    "default", (options => options
+//.AllowAnyMethod()
+//.AllowAnyHeader()
+//.AllowAnyOrigin()
+//)));
+builder.Services.AddCors((setup) =>
+{
+    setup.AddPolicy("default", (options) =>
+    {
+        options.AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin();
+    });
+});
 //////////////VVVVVVVVVV END
 var app = builder.Build();
 
