@@ -3,10 +3,9 @@
     public interface IEmpRepository
     {
         IEnumerable<Employee> GetAll();
-        Employee GetById(Guid guid);
+        Employee GetById(int id);
         Employee Add(Employee employee);
-        Employee Update(Guid guid, Employee employee);
-        Employee Delete(Guid guid);
-            
+        Employee Update(Employee employee);
+        Employee Delete(int id);
     }
 }

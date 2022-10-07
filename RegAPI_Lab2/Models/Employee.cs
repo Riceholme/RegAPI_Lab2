@@ -1,8 +1,11 @@
-﻿namespace RegAPI_Lab2.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace RegAPI_Lab2.Models
 {
     public class Employee
     {
-        public Guid Id { get; set; }
+        [Key]
+        public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string FullName { get; set; }
