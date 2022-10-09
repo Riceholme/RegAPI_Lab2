@@ -52,6 +52,50 @@ namespace RegAPI_Lab2.Controllers
             }
             return NotFound("No employees found of that Department");
         }
+        [Route("economyemployees")]
+        [HttpGet]
+        public IActionResult GetEconomyEmps()
+        {
+            var empsOfDep = _empRepo.GetAll().Where(x => x.DepartmentId == 1);
+            if (empsOfDep != null)
+            {
+                return Ok(empsOfDep);
+            }
+            return NotFound("No employees found of that Department");
+        }
+        [Route("itemployees")]
+        [HttpGet]
+        public IActionResult GetItEmps()
+        {
+            var empsOfDep = _empRepo.GetAll().Where(x => x.DepartmentId == 2);
+            if (empsOfDep != null)
+            {
+                return Ok(empsOfDep);
+            }
+            return NotFound("No employees found of that Department");
+        }
+        [Route("marketingemployees")]
+        [HttpGet]
+        public IActionResult GetMarketingEmps()
+        {
+            var empsOfDep = _empRepo.GetAll().Where(x => x.DepartmentId == 3);
+            if (empsOfDep != null)
+            {
+                return Ok(empsOfDep);
+            }
+            return NotFound("No employees found of that Department");
+        }
+        [Route("salesemployees")]
+        [HttpGet]
+        public IActionResult GetSalesEmps()
+        {
+            var empsOfDep = _empRepo.GetAll().Where(x => x.DepartmentId == 4);
+            if (empsOfDep != null)
+            {
+                return Ok(empsOfDep);
+            }
+            return NotFound("No employees found of that Department");
+        }
         [HttpPost]
         public IActionResult AddEmployee(Employee employee)
         {
