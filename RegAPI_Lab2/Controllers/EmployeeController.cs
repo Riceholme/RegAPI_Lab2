@@ -30,8 +30,8 @@ namespace RegAPI_Lab2.Controllers
             }
             return NotFound("No employees was found");
         }
-
-        [HttpGet("{id}")]
+        [Route("employee/{id}")]
+        [HttpGet]
         public IActionResult GetEmployeeById(int id)
         {
             var employee = _empRepo.GetById(id);
@@ -41,7 +41,8 @@ namespace RegAPI_Lab2.Controllers
             }
             return NotFound($"Employee with {id} was not found");
         }
-        [HttpGet("{id}")]
+        [Route("employeesofdeparment/{id}")]
+        [HttpGet]
         public IActionResult GetEmpsByDepartId(int id)
         {
             var empsOfDep = _empRepo.GetEmpsByDepId(id);
