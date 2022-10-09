@@ -7,5 +7,6 @@
         Employee Add(Employee employee);
         Employee Update(Employee employee);
         Employee Delete(int id);
+        IEnumerable<Employee> GetEmpsByDepId(int id);
     }
 }

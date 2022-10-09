@@ -41,7 +41,16 @@ namespace RegAPI_Lab2.Controllers
             }
             return NotFound($"Employee with {id} was not found");
         }
-
+        [HttpGet("{id}")]
+        public IActionResult GetEmpsByDepartId(int id)
+        {
+            var empsOfDep = _empRepo.GetEmpsByDepId(id);
+            if (empsOfDep != null)
+            {
+                return Ok(empsOfDep);
+            }
+            return NotFound("No employees found of that Department");
+        }
         [HttpPost]
         public IActionResult AddEmployee(Employee employee)
         {

@@ -56,5 +56,11 @@
             }
             return empToDelete;
         }
+
+        public IEnumerable<Employee> GetEmpsByDepId(int id)
+        {
+            var empsOfDep = _empContext.employees.Where(emp => emp.DepartmentId == id).ToList();
+            return empsOfDep;
+        }
     }
 }
