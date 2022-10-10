@@ -31,15 +31,14 @@
             var empToUpdate = _empContext.employees.FirstOrDefault(e => e.Id == employee.Id);
             if (empToUpdate != null)
             {
-                //06102022
-                //empToUpdate.FirstName = employee.FirstName;
-                //empToUpdate.LastName = employee.LastName;
-                //empToUpdate.Gender = employee.Gender;
-                //empToUpdate.Email = employee.Email;
-                //empToUpdate.PhoneNumber = employee.PhoneNumber;
-                //empToUpdate.Adress = employee.Adress;
-                //empToUpdate.Salary = employee.Salary;
-                //empToUpdate.DepartmentId = employee.DepartmentId;
+                empToUpdate.FirstName = employee.FirstName;
+                empToUpdate.LastName = employee.LastName;
+                empToUpdate.Gender = employee.Gender;
+                empToUpdate.Email = employee.Email;
+                empToUpdate.PhoneNumber = employee.PhoneNumber;
+                empToUpdate.Adress = employee.Adress;
+                empToUpdate.Salary = employee.Salary;
+                empToUpdate.DepartmentId = employee.DepartmentId;
 
                 _empContext.employees.Update(empToUpdate);
                 _empContext.SaveChanges();

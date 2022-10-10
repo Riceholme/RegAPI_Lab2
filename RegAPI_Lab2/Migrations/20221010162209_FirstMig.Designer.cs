@@ -11,8 +11,8 @@ using RegAPI_Lab2.Models;
 namespace RegAPI_Lab2.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20221007144317_nullablecollectionemployeemodel")]
-    partial class nullablecollectionemployeemodel
+    [Migration("20221010162209_FirstMig")]
+    partial class FirstMig
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
